@@ -160,6 +160,8 @@ Cada texto (chunk) processado gera um vetor numérico que representar semanticam
 
 O parâmetro `VECTOR(3072)` no Postgres informa ao pgVector quantos valores float4 serão armazenados em cada embedding. Se o tamanho não corresponder ao do modelo, o Postgres retornará erro ao inserir os dados. O vetor salvo no banco de dados já é normalizado, ou seja, seu módulo
 
-$||v||_{2} = \sqrt{\sum_{i=1}^{3072}v_{i}^{2}} = 1$ 
+$$
+     ||v||_{2} = \sqrt{\sum_{i=1}^{3072}v_{i}^{2}} = 1
+$$ 
 
 Essa normalização apesar de custosa computacionalmente é importante para que o modelo não dê peso indevido a embeddings de maior magnitude e não retorne resultados falsos.
